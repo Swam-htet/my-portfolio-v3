@@ -268,7 +268,7 @@ export default function Home() {
         </section>
 
         {/* Projects Section - Placeholder, you might want a different structure or link to a separate page */}
-        <section
+        {/* <section
           id="projects"
           className="w-full py-12 sm:py-16"
           data-aos="fade-up"
@@ -280,7 +280,6 @@ export default function Home() {
             <span className="absolute bottom-[-6px] left-0 w-1/4 h-1.5 bg-black dark:bg-white transition-all duration-500 ease-out group-hover:w-1/3 group-hover:translate-x-1"></span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {/* Example: You could map over a 'featuredProjects' array from cvData.json if you add it */}
             {[1, 2].map((_, index) => (
               <div
                 key={index}
@@ -339,7 +338,7 @@ export default function Home() {
             </a>
             .
           </p>
-        </section>
+        </section> */}
 
         {/* Skills Section */}
         <section
