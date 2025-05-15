@@ -1,0 +1,186 @@
+{
+  "personalInfo": {
+    "name": "Swam Htet",
+    "title": "Full Stack Developer",
+    "phone": "+959951538463",
+    "address": "No 403, Mahar Swe Street, Mahar Swe Condo, Hlaing Township, Yangon",
+    "email": "swamhtet129@gmail.com",
+    "githubUsername": "Swam-ht",
+    "linkedinProfile": "swamhtet",
+    "profileImage": "/profile.png"
+  },
+  "summary": "A Full-Stack Developer committed to creating innovative and efficient solutions that help businesses succeed. I am an expert in JavaScript, PHP, TypeScript, Node.js, React, and Laravel, and I perform well at translating complex challenges into elegant solutions. I bring a collaborative atmosphere to every project and mentor others on development best practices.",
+  "skills": [
+    {
+      "category": "Programming Languages",
+      "items": ["JavaScript", "TypeScript", "PHP"]
+    },
+    {
+      "category": "Frameworks & Libraries",
+      "items": [
+        "Laravel",
+        "React.js",
+        "Vue.js",
+        "Next.js",
+        "Express.js",
+        "Nest.js",
+        "Node.js",
+        "Redux Toolkit",
+        "React Router",
+        "Vite",
+        "Tailwind CSS",
+        "Material UI",
+        "Shadcn UI",
+        "Ant Design",
+        "DnD Toolkit",
+        "jQuery",
+        "Bootstrap",
+        "Prisma"
+      ]
+    },
+    {
+      "category": "Databases",
+      "items": ["MySQL", "MongoDB", "SQLite", "Redis"]
+    },
+    {
+      "category": "Tools & Platforms",
+      "items": [
+        "Git",
+        "GitHub",
+        "Docker",
+        "AWS",
+        "HTML5",
+        "CSS3",
+        "Postman",
+        "JetBrains Tools",
+        "VS Code",
+        "WebStorm",
+        "PHPStorm",
+        "Yarn",
+        "NPM",
+        "PNPM",
+        "CMake",
+        "Notion"
+      ]
+    },
+    {
+      "category": "Operating Systems",
+      "items": ["Windows", "Mac", "Linux"]
+    }
+  ],
+  "experiences": [
+    {
+      "company": "Dinger",
+      "title": "Junior Frontend Developer → Mid Frontend Developer",
+      "period": "Oct 2023 – Feb 2024",
+      "location": "Yangon, Myanmar",
+      "description": "Contributed to the development of critical financial admin dashboards and provided customer support for payment integrations.",
+      "projects": [
+        "MTB Pay mobile wallet admin dashboard : Mobile wallet application admin dashboard for MTB Bank.",
+        "Dinger : Online payment gateway service."
+      ],
+      "technologies": [
+        "React.js",
+        "Next.js",
+        "JavaScript",
+        "TypeScript",
+        "Redux Toolkit",
+        "React Query",
+        "Ant Design",
+        "Laravel (for backend integration)"
+      ]
+    },
+    {
+      "company": "Aidoma Holdings Co., Ltd.",
+      "title": "Mid Full Stack Developer",
+      "period": "Oct 2024 – Present",
+      "location": "Tokyo, Japan - Remote",
+      "description": "Developing and maintaining full-stack applications, including legacy systems and new platform features like a part-time job web platform.",
+      "projects": [
+        "Member : In house project management tool.",
+        "CDB : Sale management software.",
+        "Spotworks : part-time job web platform (admin and company dashboards)"
+      ],
+      "technologies": [
+        "React.js",
+        "Vite",
+        "TypeScript",
+        "JavaScript",
+        "Laravel",
+        "Express.js",
+        "WebSocket",
+        "MySQL",
+        "Tailwind CSS",
+        "Material UI",
+        "Redux",
+        "React Router",
+        "React Query",
+        "React Hook Form",
+        "Shadcn UI",
+        "Docker"
+      ]
+    },
+    {
+      "company": "Dentron-mm",
+      "title": "Frontend Developer",
+      "period": "Freelance Project",
+      "location": "",
+      "description": "Led frontend development for a dental clinic management application.",
+      "projects": [
+        "Dental clinic management application (appointment scheduling, core management)"
+      ],
+      "technologies": [
+        "Next.js",
+        "React.js",
+        "DnD Toolkit",
+        "React Query",
+        "React Hook Form",
+        "Tailwind CSS",
+        "Shadcn UI"
+      ],
+      "responsibilities": [
+        "Developed appointment management and essential features for the dental clinic application.",
+        "Translated Figma designs into functional frontend components.",
+        "Collaborated with UI/UX designer on implementation and technical feasibility.",
+        "Integrated drag-and-drop functionality and advanced form handling."
+      ],
+      "acquiredSkills": [
+        "Enhanced ability to implement Figma designs.",
+        "Advanced proficiency in React.js ecosystem, state management, and form handling.",
+        "Improved communication with designers and stakeholders.",
+        "Experience in building complex, interactive UI features."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Technology University - Banmaw",
+      "degree": "Foundation in Electronic and Telecommunication Technology",
+      "period": "2018 - 2020",
+      "description": "Studied foundational concepts of electronic and telecommunication technology (Years 1 & 2)."
+    },
+    {
+      "institution": "NCC Education",
+      "degree": "Level 4 Diploma in Computing",
+      "period": "2022 - 2023",
+      "description": "Gained essential skills in computing and IT principles."
+    },
+    {
+      "institution": "NCC Education",
+      "degree": "Level 5 Diploma in Computing",
+      "period": "2023 - 2024",
+      "description": "Expanded expertise with advanced computing topics."
+    },
+    {
+      "institution": "University of Greenwich",
+      "degree": "BSc (Hons) Computing",
+      "period": "2024 - Present",
+      "description": "Currently pursuing an honors degree in Computing, mastering advanced concepts and applications."
+    }
+  ],
+  "links": {
+    "github": "https://github.com/Swam-htet",
+    "linkedin": "https://www.linkedin.com/in/swam-htet-5b7084308/",
+    "portfolio": "https://my-portolio-v3.vercel.app/"
+  }
+}

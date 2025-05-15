@@ -1,0 +1,207 @@
+[
+  {
+    "name": "JavaScript",
+    "iconPath": "javascript-original.svg",
+    "category": "Programming Languages"
+  },
+  {
+    "name": "TypeScript",
+    "iconPath": "typescript-original.svg",
+    "category": "Programming Languages"
+  },
+  {
+    "name": "PHP",
+    "iconPath": "php-original.svg",
+    "category": "Programming Languages"
+  },
+  {
+    "name": "Laravel",
+    "iconPath": "laravel-original.svg",
+    "category": "Frameworks & Libraries"
+  },
+  {
+    "name": "React.js",
+    "iconPath": "react-original.svg",
+    "category": "Frameworks & Libraries"
+  },
+  {
+    "name": "Next.js",
+    "iconPath": "nextjs-original.svg",
+    "category": "Frameworks & Libraries"
+  },
+  {
+    "name": "Express.js",
+    "iconPath": "express-original.svg",
+    "category": "Frameworks & Libraries"
+  },
+  {
+    "name": "Nest.js",
+    "iconPath": "nestjs-original.svg",
+    "category": "Frameworks & Libraries"
+  },
+  {
+    "name": "Node.js",
+    "iconPath": "nodejs-original.svg",
+    "category": "Frameworks & Libraries"
+  },
+  {
+    "name": "Redux Toolkit",
+    "iconPath": "redux-original.svg",
+    "category": "Frameworks & Libraries"
+  },
+  {
+    "name": "React Router",
+    "iconPath": "reactrouter-original.svg",
+    "category": "Frameworks & Libraries"
+  },
+  {
+    "name": "Vite",
+    "iconPath": "vite-original.svg",
+    "category": "Frameworks & Libraries"
+  },
+  {
+    "name": "Tailwind CSS",
+    "iconPath": "tailwindcss-original.svg",
+    "category": "Frameworks & Libraries"
+  },
+  {
+    "name": "Material UI",
+    "iconPath": "materialui-original.svg",
+    "category": "Frameworks & Libraries"
+  },
+  {
+    "name": "MySQL",
+    "iconPath": "mysql-original.svg",
+    "category": "Databases"
+  },
+  {
+    "name": "MongoDB",
+    "iconPath": "mongodb-original.svg",
+    "category": "Databases"
+  },
+  {
+    "name": "SQLite",
+    "iconPath": "sqlite-original.svg",
+    "category": "Databases"
+  },
+  {
+    "name": "Git",
+    "iconPath": "git-original.svg",
+    "category": "Tools & Platforms"
+  },
+  {
+    "name": "GitHub",
+    "iconPath": "github-original.svg",
+    "category": "Tools & Platforms"
+  },
+  {
+    "name": "Docker",
+    "iconPath": "docker-original.svg",
+    "category": "Tools & Platforms"
+  },
+  {
+    "name": "AWS",
+    "iconPath": "amazonwebservices-original-wordmark.svg",
+    "category": "Tools & Platforms"
+  },
+  {
+    "name": "Postman",
+    "iconPath": "postman-original.svg",
+    "category": "Tools & Platforms"
+  },
+  {
+    "name": "JetBrains Tools",
+    "iconPath": "jetbrains-original.svg",
+    "category": "Tools & Platforms"
+  },
+  {
+    "name": "VS Code",
+    "iconPath": "vscode-original.svg",
+    "category": "Tools & Platforms"
+  },
+  {
+    "name": "WebStorm",
+    "iconPath": "webstorm-original.svg",
+    "category": "Tools & Platforms"
+  },
+  {
+    "name": "Windows",
+    "iconPath": "windows11-original-wordmark.svg",
+    "category": "Operating Systems"
+  },
+  {
+    "name": "Mac",
+    "iconPath": "apple-original.svg",
+    "category": "Operating Systems"
+  },
+  {
+    "name": "Linux",
+    "iconPath": "linux-original.svg",
+    "category": "Operating Systems"
+  },
+  {
+    "name": "jQuery",
+    "iconPath": "jquery-original.svg",
+    "category": "Other Icons"
+  },
+  {
+    "name": "HTML5",
+    "iconPath": "html5-original.svg",
+    "category": "Other Icons"
+  },
+  {
+    "name": "CSS3",
+    "iconPath": "css3-original.svg",
+    "category": "Other Icons"
+  },
+  {
+    "name": "CMake",
+    "iconPath": "cmake-original.svg",
+    "category": "Other Icons"
+  },
+  {
+    "name": "Bootstrap",
+    "iconPath": "bootstrap-original.svg",
+    "category": "Other Icons"
+  },
+  {
+    "name": "Vue.js",
+    "iconPath": "vuejs-original.svg",
+    "category": "Other Icons"
+  },
+  {
+    "name": "Redis",
+    "iconPath": "redis-original.svg",
+    "category": "Other Icons"
+  },
+  {
+    "name": "Prisma",
+    "iconPath": "prisma-original.svg",
+    "category": "Other Icons"
+  },
+  {
+    "name": "PostCSS",
+    "iconPath": "postcss-original.svg",
+    "category": "Other Icons"
+  },
+  {
+    "name": "PNPM",
+    "iconPath": "pnpm-original.svg",
+    "category": "Other Icons"
+  },
+  {
+    "name": "PHPStorm",
+    "iconPath": "phpstorm-original.svg",
+    "category": "Other Icons"
+  },
+  {
+    "name": "Notion",
+    "iconPath": "notion-original.svg",
+    "category": "Other Icons"
+  },
+  {
+    "name": "Yarn",
+    "iconPath": "yarn-original.svg",
+    "category": "Other Icons"
+  }
+]
