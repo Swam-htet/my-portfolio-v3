@@ -99,7 +99,7 @@
       "projects": [
         "Member : In house project management tool.",
         "CDB : Sale management software.",
-        "Spotworks : part-time job web platform (admin and company dashboards)"
+        "Spotworks : part-time job web platform"
       ],
       "technologies": [
         "React.js",
@@ -125,7 +125,7 @@
       "title": "Frontend Developer",
       "period": "Freelance Project",
       "location": "",
-      "description": "Led frontend development for a dental clinic management application.",
+      "description": "Participated in the frontend development for a dental clinic management application.",
       "projects": [
         "Dental clinic management application (appointment scheduling, core management)"
       ],
@@ -155,7 +155,7 @@
   "education": [
     {
       "institution": "Technology University - Banmaw",
-      "degree": "Foundation in Electronic and Telecommunication Technology",
+      "degree": "Electronic and Telecommunication",
       "period": "2018 - 2020",
       "description": "Studied foundational concepts of electronic and telecommunication technology (Years 1 & 2)."
     },

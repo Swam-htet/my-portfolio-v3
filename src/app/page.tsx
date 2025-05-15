@@ -102,7 +102,7 @@ export default function Home() {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-600 to-black dark:from-gray-400 dark:to-white hover:from-gray-500 hover:to-gray-800 dark:hover:from-gray-300 dark:hover:to-gray-200 transition-all duration-300 ease-in-out cursor-default">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-600 dark:from-sky-400 dark:via-blue-400 dark:to-indigo-500 hover:opacity-90 transition-opacity duration-300 cursor-default">
                 {personalInfo.name}
               </span>
             </h1>
@@ -120,13 +120,13 @@ export default function Home() {
             >
               <a
                 href="#projects"
-                className="bg-black hover:bg-gray-800 text-white dark:bg-white dark:hover:bg-gray-200 dark:text-black font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 ease-in-out"
+                className="bg-black hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-200 text-white dark:text-black font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 ease-in-out text-base sm:text-lg"
               >
                 View Projects
               </a>
               <a
                 href="#contact"
-                className="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-black dark:text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 ease-in-out"
+                className="bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-black dark:text-white font-semibold py-3 px-8 rounded-lg shadow-sm hover:shadow-md border border-gray-300 dark:border-gray-600 transform hover:-translate-y-0.5 transition-all duration-300 ease-in-out text-base sm:text-lg"
               >
                 Contact Me
               </a>
@@ -154,11 +154,10 @@ export default function Home() {
           className="w-full py-12 sm:py-16"
           data-aos="fade-up"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center sm:text-left relative group">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center sm:text-left relative group font-heading">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-700 to-black dark:from-gray-300 dark:to-white">
               About Me
             </span>
-            <span className="absolute bottom-[-6px] left-0 w-1/4 h-1.5 bg-black dark:bg-white transition-all duration-500 ease-out group-hover:w-1/3 group-hover:translate-x-1"></span>
           </h2>
           <p className="text-lg text-gray-800 dark:text-gray-300 leading-relaxed space-y-4">
             {summary}
@@ -171,21 +170,20 @@ export default function Home() {
           className="w-full py-12 sm:py-16"
           data-aos="fade-up"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center sm:text-left relative group">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center sm:text-left relative group font-heading">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-700 to-black dark:from-gray-300 dark:to-white">
               Experience
             </span>
-            <span className="absolute bottom-[-6px] left-0 w-1/4 h-1.5 bg-black dark:bg-white transition-all duration-500 ease-out group-hover:w-1/3 group-hover:translate-x-1"></span>
           </h2>
           <div className="space-y-12">
             {experiences.map((exp, index) => (
               <div
                 key={index}
-                className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+                className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl hover:border-sky-500/50 dark:hover:border-sky-400/50 border-2 border-transparent transition-all duration-300"
                 data-aos="fade-up"
                 data-aos-delay={`${index * 100}`}
               >
-                <h3 className="text-xl sm:text-2xl font-semibold mb-1 text-black dark:text-white">
+                <h3 className="text-xl sm:text-2xl font-semibold mb-1 text-black dark:text-white font-heading">
                   {exp.title} at {exp.company}
                 </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
@@ -236,21 +234,20 @@ export default function Home() {
           className="w-full py-12 sm:py-16"
           data-aos="fade-up"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center sm:text-left relative group">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center sm:text-left relative group font-heading">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-700 to-black dark:from-gray-300 dark:to-white">
               Education
             </span>
-            <span className="absolute bottom-[-6px] left-0 w-1/4 h-1.5 bg-black dark:bg-white transition-all duration-500 ease-out group-hover:w-1/3 group-hover:translate-x-1"></span>
           </h2>
           <div className="space-y-8">
             {education.map((edu, index) => (
               <div
                 key={index}
-                className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
+                className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-xl hover:border-sky-500/50 dark:hover:border-sky-400/50 border-2 border-transparent transition-all duration-300"
                 data-aos="fade-up"
                 data-aos-delay={`${index * 100}`}
               >
-                <h3 className="text-xl sm:text-2xl font-semibold text-black dark:text-white">
+                <h3 className="text-xl sm:text-2xl font-semibold text-black dark:text-white font-heading">
                   {edu.degree}
                 </h3>
                 <p className="text-md text-gray-700 dark:text-gray-300 font-medium">
@@ -346,35 +343,34 @@ export default function Home() {
           className="w-full py-12 sm:py-16"
           data-aos="fade-up"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center sm:text-left relative group">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center sm:text-left relative group font-heading">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-700 to-black dark:from-gray-300 dark:to-white">
               My Tech Stack
             </span>
-            <span className="absolute bottom-[-6px] left-0 w-1/4 h-1.5 bg-black dark:bg-white transition-all duration-500 ease-out group-hover:w-1/3 group-hover:translate-x-1"></span>
           </h2>
-          {skills.map((skillCategory) => (
+          {skills.map((skillCategory, categoryIndex) => (
             <div
               key={skillCategory.category}
               className="mb-8"
               data-aos="fade-up"
+              data-aos-delay={`${categoryIndex * 50}`}
             >
-              <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-4">
+              <h3
+                className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-4 font-heading"
+                data-aos="fade-up"
+                data-aos-delay={`${categoryIndex * 50 + 50}`}
+              >
                 {skillCategory.category}
               </h3>
               <ul className="flex flex-wrap gap-3 sm:gap-4 justify-center sm:justify-start">
-                {skillCategory.items.map((skillName, index) => (
+                {skillCategory.items.map((skillName, itemIndex) => (
                   <li
                     key={skillName}
-                    className="flex items-center gap-2 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium shadow-md hover:shadow-lg transform hover:-translate-y-1 hover:scale-105 transition-all duration-200 border border-gray-300 dark:border-gray-600 hover:bg-gray-300 dark:hover:bg-gray-600"
+                    className="flex items-center gap-2 bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-200 px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium shadow-md hover:shadow-lg transform hover:-translate-y-1 hover:scale-105 transition-all duration-200 border border-gray-300 dark:border-gray-600 hover:bg-gray-300 dark:hover:bg-gray-600 hover:border-sky-500 dark:hover:border-sky-400"
                     data-aos="fade-up"
-                    data-aos-delay={`${index * 50}`}
+                    data-aos-delay={`${itemIndex * 50}`}
                   >
-                    {
-                      iconMap[skillName] ||
-                        iconMap[
-                          'AWS'
-                        ] /* Fallback icon updated to AWS as Dev Tools was removed*/
-                    }
+                    {iconMap[skillName] || iconMap['AWS']}
                     <span>{skillName}</span>
                   </li>
                 ))}
@@ -445,15 +441,6 @@ export default function Home() {
           >
             LinkedIn
           </a>
-          {/* You can add your portfolio link here if different from the current site */}
-          {/* <a
-            href={links.portfolio}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors text-lg"
-          >
-            Portfolio
-          </a> */}
         </div>
         <div className="space-y-1">
           <p>{personalInfo.name}</p>
