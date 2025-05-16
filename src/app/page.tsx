@@ -119,12 +119,6 @@ export default function Home() {
               data-aos-delay="400"
             >
               <a
-                href="#projects"
-                className="bg-black hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-200 text-white dark:text-black font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 ease-in-out text-base sm:text-lg"
-              >
-                View Projects
-              </a>
-              <a
                 href="#contact"
                 className="bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-black dark:text-white font-semibold py-3 px-8 rounded-lg shadow-sm hover:shadow-md border border-gray-300 dark:border-gray-600 transform hover:-translate-y-0.5 transition-all duration-300 ease-in-out text-base sm:text-lg"
               >
