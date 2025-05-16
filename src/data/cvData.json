@@ -70,27 +70,6 @@
   ],
   "experiences": [
     {
-      "company": "Dinger",
-      "title": "Junior Frontend Developer → Mid Frontend Developer",
-      "period": "Oct 2023 – Feb 2024",
-      "location": "Yangon, Myanmar",
-      "description": "Contributed to the development of critical financial admin dashboards and provided customer support for payment integrations.",
-      "projects": [
-        "MTB Pay mobile wallet admin dashboard : Mobile wallet application admin dashboard for MTB Bank.",
-        "Dinger : Online payment gateway service."
-      ],
-      "technologies": [
-        "React.js",
-        "Next.js",
-        "JavaScript",
-        "TypeScript",
-        "Redux Toolkit",
-        "React Query",
-        "Ant Design",
-        "Laravel (for backend integration)"
-      ]
-    },
-    {
       "company": "Aidoma Holdings Co., Ltd.",
       "title": "Mid Full Stack Developer",
       "period": "Oct 2024 – Present",
@@ -118,6 +97,27 @@
         "React Hook Form",
         "Shadcn UI",
         "Docker"
+      ]
+    },
+    {
+      "company": "Dinger",
+      "title": "Junior Frontend Developer → Mid Frontend Developer",
+      "period": "Oct 2023 – Feb 2024",
+      "location": "Yangon, Myanmar",
+      "description": "Contributed to the development of critical financial admin dashboards and provided customer support for payment integrations.",
+      "projects": [
+        "MTB Pay mobile wallet admin dashboard : Mobile wallet application admin dashboard for MTB Bank.",
+        "Dinger : Online payment gateway service."
+      ],
+      "technologies": [
+        "React.js",
+        "Next.js",
+        "JavaScript",
+        "TypeScript",
+        "Redux Toolkit",
+        "React Query",
+        "Ant Design",
+        "Laravel (for backend integration)"
       ]
     },
     {
@@ -154,16 +154,10 @@
   ],
   "education": [
     {
-      "institution": "Technology University - Banmaw",
-      "degree": "Electronic and Telecommunication",
-      "period": "2018 - 2020",
-      "description": "Studied foundational concepts of electronic and telecommunication technology (Years 1 & 2)."
-    },
-    {
-      "institution": "NCC Education",
-      "degree": "Level 4 Diploma in Computing",
-      "period": "2022 - 2023",
-      "description": "Gained essential skills in computing and IT principles."
+      "institution": "University of Greenwich",
+      "degree": "BSc (Hons) Computing",
+      "period": "2024 - Present",
+      "description": "Currently pursuing an honors degree in Computing, mastering advanced concepts and applications."
     },
     {
       "institution": "NCC Education",
@@ -172,10 +166,16 @@
       "description": "Expanded expertise with advanced computing topics."
     },
     {
-      "institution": "University of Greenwich",
-      "degree": "BSc (Hons) Computing",
-      "period": "2024 - Present",
-      "description": "Currently pursuing an honors degree in Computing, mastering advanced concepts and applications."
+      "institution": "NCC Education",
+      "degree": "Level 4 Diploma in Computing",
+      "period": "2022 - 2023",
+      "description": "Gained essential skills in computing and IT principles."
+    },
+    {
+      "institution": "Technology University - Banmaw",
+      "degree": "Electronic and Communication",
+      "period": "2018 - 2020",
+      "description": "Studied foundational concepts of electronic and telecommunication technology (Years 1 & 2)."
     }
   ],
   "links": {
