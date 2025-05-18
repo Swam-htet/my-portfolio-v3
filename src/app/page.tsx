@@ -364,7 +364,7 @@ export default function Home() {
                     data-aos="fade-up"
                     data-aos-delay={`${itemIndex * 50}`}
                   >
-                    {iconMap[skillName] || iconMap['AWS']}
+                    {iconMap[skillName]}
                     <span>{skillName}</span>
                   </li>
                 ))}
