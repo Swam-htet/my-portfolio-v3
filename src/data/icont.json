@@ -15,6 +15,11 @@
     "category": "Programming Languages"
   },
   {
+    "name": "GoLang",
+    "iconPath": "golang-official.svg",
+    "category": "Programming Languages"
+  },
+  {
     "name": "Laravel",
     "iconPath": "laravel-original.svg",
     "category": "Frameworks & Libraries"
@@ -45,33 +50,78 @@
     "category": "Frameworks & Libraries"
   },
   {
-    "name": "Redux Toolkit",
-    "iconPath": "redux-original.svg",
-    "category": "Frameworks & Libraries"
-  },
-  {
-    "name": "React Router",
-    "iconPath": "reactrouter-original.svg",
-    "category": "Frameworks & Libraries"
-  },
-  {
     "name": "Vite",
-    "iconPath": "vite-original.svg",
-    "category": "Frameworks & Libraries"
+    "iconPath": "vitejs.svg",
+    "category": "Libraries"
   },
   {
     "name": "Tailwind CSS",
     "iconPath": "tailwindcss-original.svg",
-    "category": "Frameworks & Libraries"
+    "category": "Libraries"
   },
   {
     "name": "Material UI",
     "iconPath": "materialui-original.svg",
-    "category": "Frameworks & Libraries"
+    "category": "Libraries"
+  },
+  {
+    "name": "Redux Toolkit",
+    "iconPath": "redux-original.svg",
+    "category": "Libraries"
+  },
+  {
+    "name": "React Router",
+    "iconPath": "reactrouter-original.svg",
+    "category": "Libraries"
+  },
+  {
+    "name": "jQuery",
+    "iconPath": "jquery-original.svg",
+    "category": "Libraries"
+  },
+  {
+    "name": "Bootstrap",
+    "iconPath": "bootstrap-original.svg",
+    "category": "Libraries"
+  },
+  {
+    "name": "Prisma",
+    "iconPath": "prisma-original.svg",
+    "category": "Libraries"
+  },
+  {
+    "name": "Shadcn UI",
+    "iconPath": "shadcn-ui-seeklogo.svg",
+    "category": "Libraries"
+  },
+  {
+    "name": "Ant Design",
+    "iconPath": "ant-design-svgrepo-com.svg",
+    "category": "Libraries"
+  },
+  {
+    "name": "TanStack Query",
+    "iconPath": "logo-color-banner-100.png",
+    "category": "Libraries"
+  },
+  {
+    "name": "TanStack Router",
+    "iconPath": "logo-color-banner-100.png",
+    "category": "Libraries"
+  },
+  {
+    "name": "React Hook Form",
+    "iconPath": "react-hook-form.svg",
+    "category": "Libraries"
   },
   {
     "name": "MySQL",
     "iconPath": "mysql-original.svg",
+    "category": "Databases"
+  },
+  {
+    "name": "PostgreSQL",
+    "iconPath": "postgresql-logo-svgrepo-com.svg",
     "category": "Databases"
   },
   {
@@ -102,6 +152,16 @@
   {
     "name": "AWS",
     "iconPath": "amazonwebservices-original-wordmark.svg",
+    "category": "Tools & Platforms"
+  },
+  {
+    "name": "DevOps",
+    "iconPath": "devops-2.svg",
+    "category": "Tools & Platforms"
+  },
+  {
+    "name": "Nginx",
+    "iconPath": "nginx-1.svg",
     "category": "Tools & Platforms"
   },
   {
@@ -140,11 +200,6 @@
     "category": "Operating Systems"
   },
   {
-    "name": "jQuery",
-    "iconPath": "jquery-original.svg",
-    "category": "Other Icons"
-  },
-  {
     "name": "HTML5",
     "iconPath": "html5-original.svg",
     "category": "Other Icons"
@@ -160,11 +215,6 @@
     "category": "Other Icons"
   },
   {
-    "name": "Bootstrap",
-    "iconPath": "bootstrap-original.svg",
-    "category": "Other Icons"
-  },
-  {
     "name": "Vue.js",
     "iconPath": "vuejs-original.svg",
     "category": "Other Icons"
@@ -172,11 +222,6 @@
   {
     "name": "Redis",
     "iconPath": "redis-original.svg",
-    "category": "Other Icons"
-  },
-  {
-    "name": "Prisma",
-    "iconPath": "prisma-original.svg",
     "category": "Other Icons"
   },
   {

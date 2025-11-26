@@ -2,36 +2,44 @@
   "personalInfo": {
     "name": "Swam Htet",
     "title": "Full Stack Developer",
-    "phone": "+959951538463",
-    "address": "No 403, Mahar Swe Street, Mahar Swe Condo, Hlaing Township, Yangon",
-    "email": "swamhtet129@gmail.com",
+    "phone": "+95 9951538463",
+    "address": "Hlaing Township, Yangon",
+    "email": "swamhtet129@gmail.com, shtet3@kmd.edu.mm",
     "githubUsername": "Swam-ht",
     "linkedinProfile": "swamhtet",
     "profileImage": "/profile.png"
   },
-  "summary": "A Full-Stack Developer committed to creating innovative and efficient solutions that help businesses succeed. I am an expert in JavaScript, PHP, TypeScript, Node.js, React, and Laravel, and I perform well at translating complex challenges into elegant solutions. I bring a collaborative atmosphere to every project and mentor others on development best practices.",
+  "summary": "A Full-Stack Developer committed to creating innovative and efficient solutions that help businesses succeed. Expert in JavaScript, TypeScript, PHP, Go, Node.js, React, and Laravel, with a strong ability to translate complex challenges into elegant, maintainable solutions. Brings a collaborative approach to every project and mentors others on development best practices.",
   "skills": [
     {
       "category": "Programming Languages",
-      "items": ["JavaScript", "TypeScript", "PHP"]
+      "items": ["JavaScript", "TypeScript", "PHP", "GoLang"]
     },
     {
-      "category": "Frameworks & Libraries",
+      "category": "Frameworks",
       "items": [
         "Laravel",
         "React.js",
-        "Vue.js",
         "Next.js",
         "Express.js",
         "Nest.js",
-        "Node.js",
+        "Node.js"
+      ]
+    },
+    {
+      "category": "Libraries",
+      "items": [
         "Redux Toolkit",
+        "React Query",
+        "TanStack Query",
+        "TanStack Router",
         "React Router",
-        "Vite",
-        "Tailwind CSS",
-        "Material UI",
+        "React Hook Form",
         "Shadcn UI",
         "Ant Design",
+        "Material UI",
+        "Tailwind CSS",
+        "Vite",
         "DnD Toolkit",
         "jQuery",
         "Bootstrap",
@@ -40,7 +48,11 @@
     },
     {
       "category": "Databases",
-      "items": ["MySQL", "MongoDB", "SQLite", "Redis"]
+      "items": ["MySQL", "PostgreSQL", "MongoDB", "Redis"]
+    },
+    {
+      "category": "Operating Systems",
+      "items": ["Windows", "Mac", "Linux"]
     },
     {
       "category": "Tools & Platforms",
@@ -49,36 +61,37 @@
         "GitHub",
         "Docker",
         "AWS",
-        "HTML5",
-        "CSS3",
         "Postman",
         "JetBrains Tools",
         "VS Code",
         "WebStorm",
         "PHPStorm",
         "Yarn",
-        "NPM",
         "PNPM",
-        "CMake",
-        "Notion"
+        "Nginx",
+        "Notion",
+        "Figma",
+        "Jira"
       ]
     },
     {
-      "category": "Operating Systems",
-      "items": ["Windows", "Mac", "Linux"]
+      "category": "Currently Learning",
+      "items": ["AWS", "DevOps", "Go"]
     }
   ],
   "experiences": [
     {
       "company": "Aidoma Holdings Co., Ltd.",
+      "companyUrl": "https://www.aidma-hd.jp/",
       "title": "Mid Full Stack Developer",
       "period": "Oct 2024 – Present",
       "location": "Tokyo, Japan - Remote",
       "description": "Developing and maintaining full-stack applications, including legacy systems and new platform features like a part-time job web platform.",
       "projects": [
-        "Member : In house project management tool.",
-        "CDB : Sale management software.",
-        "Spotworks : part-time job web platform"
+        "MemberS : Legacy in-house project management system",
+        "CDB : Sales management web application",
+        "Spotworks : Part-time job platform",
+        "AI-Receptionist : AI-powered receptionist platform"
       ],
       "technologies": [
         "React.js",
@@ -91,23 +104,69 @@
         "MySQL",
         "Tailwind CSS",
         "Material UI",
-        "Redux",
-        "React Router",
-        "React Query",
-        "React Hook Form",
         "Shadcn UI",
+        "Redux",
+        "TanStack Query",
+        "TanStack Router",
+        "React Router",
+        "React Hook Form",
         "Docker"
+      ],
+      "responsibilities": [
+        "Developed and maintained full-stack features across multiple internal and client-facing applications.",
+        "Implemented core functionalities such as CRUD modules, point systems, third-party integrations (including Japan banking systems), and AI-Receptionist features (meeting scheduling, appointment flows, notification integrations like ChatWork, AI API integration, and multi-role dashboards).",
+        "Collaborated with project managers for requirement analysis and delivery timelines.",
+        "Performed code reviews, mentored junior developers, and improved overall codebase quality."
+      ],
+      "acquiredSkills": [
+        "Development with modern JavaScript frameworks and backend architectures.",
+        "Scalable UI development with advanced state/data management (Redux, TanStack Query).",
+        "Layered architecture and clean REST API design in backend development.",
+        "Strengthened leadership, code review, and cross-team communication skills."
+      ]
+    },
+    {
+      "company": "B8ict.net",
+      "companyUrl": "https://b8ict.net/",
+      "title": "Full Stack Developer",
+      "period": "Freelance",
+      "location": "",
+      "description": "Delivered full-stack features for the GotChu community platform, including gamification, user onboarding, campaign logic, and admin management tools.",
+      "projects": [
+        "GotChu : Community Application Platform (CMS management, community user registration & onboarding, gamification system with points/badges/levels, community campaigns with daily challenges and streak tracking, admin management dashboard)"
+      ],
+      "technologies": [
+        "React.js",
+        "Vite",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "React Query",
+        "TanStack Router",
+        "Redux Toolkit",
+        "NestJS",
+        "MongoDB",
+        "Redis",
+        "WebSocket",
+        "Express.js"
+      ],
+      "responsibilities": [
+        "Delivered full-stack features for the GotChu community platform, including gamification, user onboarding, campaign logic, and admin management tools.",
+        "Developed backend APIs and real-time modules using NestJS, Redis Pub/Sub, and WebSocket communication.",
+        "Built responsive, interactive frontend components using React, React Query, TanStack Router, and modern UI libraries.",
+        "Worked closely with stakeholders, clients, UI/UX designers, and QA teams to translate requirements into production-ready features.",
+        "Ensured high-quality code, modular architecture, and maintainable development practices across the entire stack."
       ]
     },
     {
       "company": "Dinger",
+      "companyUrl": "https://dinger.asia/",
       "title": "Junior Frontend Developer → Mid Frontend Developer",
-      "period": "Oct 2023 – Feb 2024",
+      "period": "Oct 2023 – Feb 2025",
       "location": "Yangon, Myanmar",
       "description": "Contributed to the development of critical financial admin dashboards and provided customer support for payment integrations.",
       "projects": [
         "MTB Pay mobile wallet admin dashboard : Mobile wallet application admin dashboard for MTB Bank.",
-        "Dinger : Online payment gateway service."
+        "Internal admin dashboards : Payment gateway setup, payment integration tools"
       ],
       "technologies": [
         "React.js",
@@ -117,65 +176,79 @@
         "Redux Toolkit",
         "React Query",
         "Ant Design",
-        "Laravel (for backend integration)"
+        "Laravel"
+      ],
+      "responsibilities": [
+        "Built and maintained key dashboard features: KYC & user management, notification system, electricity bill management, banking transaction & accounting modules, general settings, and role/permission management.",
+        "Integrated frontend with backend APIs and handled complex data/state flows.",
+        "Collaborated with the UI/UX team for better usability and design accuracy.",
+        "Supported customers on payment integration and troubleshooting.",
+        "Participated in Agile workflows, code reviews, and continuous improvements."
+      ],
+      "acquiredSkills": [
+        "Strong expertise in React, Next.js, TypeScript, Redux Toolkit, and React Query.",
+        "Experience developing large-scale admin systems with complex business logic.",
+        "Improved ability to convert business needs into reliable technical solutions.",
+        "Enhanced teamwork and communication in cross-functional environments."
       ]
     },
     {
       "company": "Dentron-mm",
       "title": "Frontend Developer",
-      "period": "Freelance Project",
+      "period": "Freelance",
       "location": "",
-      "description": "Participated in the frontend development for a dental clinic management application.",
+      "description": "Participated in the frontend development for a dental clinic management application with appointment scheduling, settlement management, inventory management, and invoicing.",
       "projects": [
-        "Dental clinic management application (appointment scheduling, core management)"
+        "Dental clinic management application : Appointment scheduling, settlement management, inventory management, and invoicing"
       ],
       "technologies": [
         "Next.js",
         "React.js",
-        "DnD Toolkit",
         "React Query",
+        "Redux",
+        "DnD Toolkit",
         "React Hook Form",
         "Tailwind CSS",
         "Shadcn UI"
       ],
       "responsibilities": [
-        "Developed appointment management and essential features for the dental clinic application.",
-        "Translated Figma designs into functional frontend components.",
-        "Collaborated with UI/UX designer on implementation and technical feasibility.",
-        "Integrated drag-and-drop functionality and advanced form handling."
+        "Built core clinic features: appointment scheduling, settlements, inventory flows, and invoicing.",
+        "Converted Figma designs into responsive, production-ready components.",
+        "Collaborated with UI/UX designers to ensure accurate and feasible design implementation.",
+        "Implemented drag-and-drop interactions and advanced form handling for a smooth user experience."
       ],
       "acquiredSkills": [
-        "Enhanced ability to implement Figma designs.",
-        "Advanced proficiency in React.js ecosystem, state management, and form handling.",
-        "Improved communication with designers and stakeholders.",
-        "Experience in building complex, interactive UI features."
+        "Strong proficiency in the React/Next.js ecosystem.",
+        "Ability to translate complex Figma designs into functional UI.",
+        "Experience building interactive features and managing dynamic state.",
+        "Improved communication with designers and project stakeholders."
       ]
     }
   ],
   "education": [
     {
       "institution": "University of Greenwich",
-      "degree": "BSc (Hons) Computing",
-      "period": "2024 - Present",
-      "description": "Currently pursuing an honors degree in Computing, mastering advanced concepts and applications."
+      "degree": "BSc Hons Computing",
+      "period": "2024 - 2025",
+      "description": "Completed an Honours Degree in Computing with First Class Honours, gaining deep knowledge in computing concepts and practical applications. This achievement has equipped me with strong problem-solving abilities and the skills needed to handle real-world challenges in the tech industry."
     },
     {
       "institution": "NCC Education",
       "degree": "Level 5 Diploma in Computing",
       "period": "2023 - 2024",
-      "description": "Expanded expertise with advanced computing topics."
+      "description": "Expanded expertise in computing with a deeper dive into advanced topics, preparing for a more specialized and detailed understanding of the field, paving the way for further academic pursuits in computing."
     },
     {
       "institution": "NCC Education",
       "degree": "Level 4 Diploma in Computing",
       "period": "2022 - 2023",
-      "description": "Gained essential skills in computing and IT principles."
+      "description": "Gained essential skills and knowledge in computing, focusing on foundational aspects of IT and computing principles, which provided a strong base for advanced studies in computing."
     },
     {
       "institution": "Technology University - Banmaw",
       "degree": "Electronic and Communication",
       "period": "2018 - 2020",
-      "description": "Studied foundational concepts of electronic and telecommunication technology (Years 1 & 2)."
+      "description": "Studied the foundational concepts of electronic and telecommunication technology, covering the basics in the first and second years, which laid the groundwork for understanding complex electronic and communication systems."
     }
   ],
   "links": {

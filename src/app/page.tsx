@@ -1,73 +1,556 @@
 'use client';
 
-import cvData from '@/data/cvData.json'; // Assuming cvData.json is in src/data/
+import cvData from '@/data/cvData.json';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Image from 'next/image';
 import { JSX, useEffect, useState } from 'react';
 
-function SvgIcon({
+function IconImage({
   path,
   sizeClass = 'w-5 h-5',
+  alt = '',
+  width = 20,
+  height = 20,
 }: {
   path: string;
   sizeClass?: string;
+  alt?: string;
+  width?: number;
+  height?: number;
+}) {
+  return (
+    <div
+      className={`${sizeClass} flex-shrink-0 flex items-center justify-center`}
+    >
+      <Image
+        src={`/icons/${path}`}
+        alt={alt}
+        width={width}
+        height={height}
+        className="w-full h-full object-contain"
+      />
+    </div>
+  );
+}
+
+function SvgIcon({
+  path,
+  sizeClass = 'w-5 h-5',
+  width = 20,
+  height = 20,
+}: {
+  path: string;
+  sizeClass?: string;
+  width?: number;
+  height?: number;
 }) {
   const [svg, setSvg] = useState('');
   useEffect(() => {
     fetch(`/icons/${path}`)
       .then((res) => res.text())
-      .then(setSvg);
+      .then((svgText) => {
+        // Process SVG to ensure proper sizing
+        let processedSvg = svgText;
+
+        // Remove fixed width/height attributes
+        processedSvg = processedSvg.replace(/\s+width="[^"]*"/gi, '');
+        processedSvg = processedSvg.replace(/\s+height="[^"]*"/gi, '');
+
+        // Ensure viewBox exists
+        if (!processedSvg.includes('viewBox=')) {
+          const widthMatch = svgText.match(/width="?(\d+)"?/i);
+          const heightMatch = svgText.match(/height="?(\d+)"?/i);
+          if (widthMatch && heightMatch) {
+            const w = widthMatch[1];
+            const h = heightMatch[1];
+            processedSvg = processedSvg.replace(
+              /<svg/i,
+              `<svg viewBox="0 0 ${w} ${h}"`
+            );
+          } else {
+            processedSvg = processedSvg.replace(
+              /<svg/i,
+              '<svg viewBox="0 0 24 24"'
+            );
+          }
+        }
+
+        // Add style for proper scaling
+        if (!processedSvg.includes('style=')) {
+          processedSvg = processedSvg.replace(
+            /<svg([^>]*)>/i,
+            '<svg$1 style="width: 100%; height: 100%; display: block;">'
+          );
+        } else {
+          processedSvg = processedSvg.replace(
+            /style="([^"]*)"/i,
+            'style="$1; width: 100%; height: 100%; display: block;"'
+          );
+        }
+
+        // Ensure preserveAspectRatio
+        if (!processedSvg.includes('preserveAspectRatio=')) {
+          processedSvg = processedSvg.replace(
+            /<svg([^>]*)>/i,
+            '<svg$1 preserveAspectRatio="xMidYMid meet">'
+          );
+        }
+
+        setSvg(processedSvg);
+      })
+      .catch(() => setSvg(''));
   }, [path]);
   if (!svg) return null;
   return (
-    <div className={sizeClass} dangerouslySetInnerHTML={{ __html: svg }} />
+    <div
+      className={`${sizeClass} flex-shrink-0 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full`}
+      style={{ width: `${width}px`, height: `${height}px` }}
+      dangerouslySetInnerHTML={{ __html: svg }}
+    />
   );
 }
 
+// Consistent icon size for all icons
+const ICON_SIZE = 20;
+const ICON_SIZE_CLASS = 'w-5 h-5';
+
 const iconMap: { [key: string]: JSX.Element } = {
-  jQuery: <SvgIcon path="jquery-original.svg" />,
-  HTML5: <SvgIcon path="html5-original.svg" />,
-  CSS3: <SvgIcon path="css3-original.svg" />,
-  CMake: <SvgIcon path="cmake-original.svg" />,
-  Bootstrap: <SvgIcon path="bootstrap-original.svg" />,
-  'Vue.js': <SvgIcon path="vuejs-original.svg" />,
-  Redis: <SvgIcon path="redis-original.svg" />,
-  Prisma: <SvgIcon path="prisma-original.svg" />,
-  PostCSS: <SvgIcon path="postcss-original.svg" />,
-  PNPM: <SvgIcon path="pnpm-original.svg" />,
-  PHPStorm: <SvgIcon path="phpstorm-original.svg" />,
-  Notion: <SvgIcon path="notion-original.svg" />,
-  Linux: <SvgIcon path="linux-original.svg" />,
-  Mac: <SvgIcon path="apple-original.svg" />,
-  Windows: <SvgIcon path="windows11-original-wordmark.svg" />,
-  'Material UI': <SvgIcon path="materialui-original.svg" />,
-  'Tailwind CSS': <SvgIcon path="tailwindcss-original.svg" />,
-  'React Router': <SvgIcon path="reactrouter-original.svg" />,
-  'Redux Toolkit': <SvgIcon path="redux-original.svg" />,
-  'Node.js': <SvgIcon path="nodejs-original.svg" />,
-  'Nest.js': <SvgIcon path="nestjs-original.svg" />,
-  PHP: <SvgIcon path="php-original.svg" />,
-  TypeScript: <SvgIcon path="typescript-original.svg" />,
-  JavaScript: <SvgIcon path="javascript-original.svg" />,
-  Jira: <SvgIcon path="jira-original.svg" />,
-  Postman: <SvgIcon path="postman-original.svg" />,
-  Figma: <SvgIcon path="figma-original.svg" />,
-  AWS: <SvgIcon path="amazonwebservices-original-wordmark.svg" />,
-  'JetBrains Tools': <SvgIcon path="jetbrains-original.svg" />,
-  WebStorm: <SvgIcon path="webstorm-original.svg" />,
-  'VS Code': <SvgIcon path="vscode-original.svg" />,
-  GitHub: <SvgIcon path="github-original.svg" />,
-  Git: <SvgIcon path="git-original.svg" />,
-  'Express.js': <SvgIcon path="express-original.svg" />,
-  MongoDB: <SvgIcon path="mongodb-original.svg" />,
-  MySQL: <SvgIcon path="mysql-original.svg" />,
-  SQLite: <SvgIcon path="sqlite-original.svg" />,
-  'Next.js': <SvgIcon path="nextjs-original.svg" />,
-  'React.js': <SvgIcon path="react-original.svg" />,
-  Docker: <SvgIcon path="docker-original.svg" />,
-  Yarn: <SvgIcon path="yarn-original.svg" />,
-  Laravel: <SvgIcon path="laravel-original.svg" />,
+  jQuery: (
+    <SvgIcon
+      path="jquery-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  HTML5: (
+    <SvgIcon
+      path="html5-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  CSS3: (
+    <SvgIcon
+      path="css3-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  CMake: (
+    <SvgIcon
+      path="cmake-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  Bootstrap: (
+    <SvgIcon
+      path="bootstrap-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  'Vue.js': (
+    <SvgIcon
+      path="vuejs-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  Redis: (
+    <SvgIcon
+      path="redis-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  Prisma: (
+    <SvgIcon
+      path="prisma-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  PostCSS: (
+    <SvgIcon
+      path="postcss-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  PNPM: (
+    <SvgIcon
+      path="pnpm-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  PHPStorm: (
+    <SvgIcon
+      path="phpstorm-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  Notion: (
+    <SvgIcon
+      path="notion-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  Linux: (
+    <SvgIcon
+      path="linux-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  Mac: (
+    <SvgIcon
+      path="apple-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  Windows: (
+    <SvgIcon
+      path="windows11-original-wordmark.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  'Material UI': (
+    <SvgIcon
+      path="materialui-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  'Tailwind CSS': (
+    <SvgIcon
+      path="tailwindcss-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  'React Router': (
+    <SvgIcon
+      path="reactrouter-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  'Redux Toolkit': (
+    <SvgIcon
+      path="redux-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  'Node.js': (
+    <SvgIcon
+      path="nodejs-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  'Nest.js': (
+    <SvgIcon
+      path="nestjs-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  PHP: (
+    <SvgIcon
+      path="php-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  TypeScript: (
+    <SvgIcon
+      path="typescript-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  JavaScript: (
+    <SvgIcon
+      path="javascript-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  GoLang: (
+    <SvgIcon
+      path="golang-official.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  Go: (
+    <SvgIcon
+      path="golang-official.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  Jira: (
+    <SvgIcon
+      path="jira-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  Postman: (
+    <SvgIcon
+      path="postman-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  Figma: (
+    <SvgIcon
+      path="figma-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  AWS: (
+    <SvgIcon
+      path="amazonwebservices-original-wordmark.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  DevOps: (
+    <SvgIcon
+      path="devops-2.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  Nginx: (
+    <SvgIcon
+      path="nginx-1.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  'JetBrains Tools': (
+    <SvgIcon
+      path="jetbrains-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  WebStorm: (
+    <SvgIcon
+      path="webstorm-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  'VS Code': (
+    <SvgIcon
+      path="vscode-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  GitHub: (
+    <SvgIcon
+      path="github-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  Git: (
+    <SvgIcon
+      path="git-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  'Express.js': (
+    <SvgIcon
+      path="express-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  MongoDB: (
+    <SvgIcon
+      path="mongodb-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  MySQL: (
+    <SvgIcon
+      path="mysql-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  PostgreSQL: (
+    <SvgIcon
+      path="postgresql-logo-svgrepo-com.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  SQLite: (
+    <SvgIcon
+      path="sqlite-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  'Next.js': (
+    <SvgIcon
+      path="nextjs-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  'React.js': (
+    <SvgIcon
+      path="react-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  Docker: (
+    <SvgIcon
+      path="docker-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  Yarn: (
+    <SvgIcon
+      path="yarn-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  Laravel: (
+    <SvgIcon
+      path="laravel-original.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  Vite: (
+    <SvgIcon
+      path="vitejs.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  'Shadcn UI': (
+    <SvgIcon
+      path="shadcn-ui-seeklogo.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  'Ant Design': (
+    <SvgIcon
+      path="ant-design-svgrepo-com.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  'TanStack Query': (
+    <IconImage
+      path="logo-color-banner-100.png"
+      alt="TanStack Query"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  'TanStack Router': (
+    <IconImage
+      path="logo-color-banner-100.png"
+      alt="TanStack Router"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  'React Hook Form': (
+    <SvgIcon
+      path="react-hook-form.svg"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
+  'React Query': (
+    <IconImage
+      path="logo-color-banner-100.png"
+      alt="React Query"
+      sizeClass={ICON_SIZE_CLASS}
+      width={ICON_SIZE}
+      height={ICON_SIZE}
+    />
+  ),
 };
 
 const { personalInfo, summary, skills, experiences, education, links } = cvData;
@@ -75,9 +558,12 @@ const { personalInfo, summary, skills, experiences, education, links } = cvData;
 export default function Home() {
   useEffect(() => {
     AOS.init({
-      duration: 800,
-      once: false,
-      mirror: true,
+      duration: 1000,
+      once: true,
+      mirror: false,
+      easing: 'ease-out-cubic',
+      offset: 100,
+      delay: 0,
     });
   }, []);
 
@@ -102,7 +588,7 @@ export default function Home() {
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-600 dark:from-sky-400 dark:via-blue-400 dark:to-indigo-500 hover:opacity-90 transition-opacity duration-300 cursor-default">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-600 dark:from-sky-400 dark:via-blue-400 dark:to-indigo-500 hover:opacity-90 transition-opacity duration-300 cursor-default animate-pulse hover:animate-none">
                 {personalInfo.name}
               </span>
             </h1>
@@ -120,9 +606,10 @@ export default function Home() {
             >
               <a
                 href="#contact"
-                className="bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-black dark:text-white font-semibold py-3 px-8 rounded-lg shadow-sm hover:shadow-md border border-gray-300 dark:border-gray-600 transform hover:-translate-y-0.5 transition-all duration-300 ease-in-out text-base sm:text-lg"
+                className="bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 text-black dark:text-white font-semibold py-3 px-8 rounded-lg shadow-sm hover:shadow-md border border-gray-300 dark:border-gray-600 transform hover:-translate-y-1 hover:scale-105 transition-all duration-300 ease-in-out text-base sm:text-lg group relative overflow-hidden"
               >
-                Contact Me
+                <span className="relative z-10">Contact Me</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-sky-500 to-indigo-600 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
               </a>
             </div>
           </div>
@@ -131,14 +618,21 @@ export default function Home() {
             data-aos="fade-left"
             data-aos-delay="500"
           >
-            <Image
-              src={personalInfo.profileImage}
-              alt={`${personalInfo.name} - Profile Picture`}
-              width={280}
-              height={280}
-              className="rounded-full shadow-2xl object-cover w-48 h-48 sm:w-60 sm:h-60 md:w-72 md:h-72 border-4 border-gray-300 dark:border-gray-700 hover:scale-105 hover:shadow-gray-400/50 dark:hover:shadow-gray-600/50 transition-all duration-300 ease-in-out"
-              priority
-            />
+            <div
+              className="relative group"
+              data-aos="zoom-in"
+              data-aos-delay="500"
+            >
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600 opacity-20 blur-xl group-hover:opacity-30 transition-opacity duration-500 animate-pulse"></div>
+              <Image
+                src={personalInfo.profileImage}
+                alt={`${personalInfo.name} - Profile Picture`}
+                width={280}
+                height={280}
+                className="relative rounded-full shadow-2xl object-cover w-48 h-48 sm:w-60 sm:h-60 md:w-72 md:h-72 border-4 border-gray-300 dark:border-gray-700 hover:scale-110 hover:rotate-3 hover:shadow-gray-400/50 dark:hover:shadow-gray-600/50 transition-all duration-500 ease-out"
+                priority
+              />
+            </div>
           </div>
         </section>
 
@@ -149,11 +643,12 @@ export default function Home() {
           data-aos="fade-up"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-center sm:text-left relative group font-heading">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-700 to-black dark:from-gray-300 dark:to-white">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-700 to-black dark:from-gray-300 dark:to-white inline-block hover:scale-105 transition-transform duration-300">
               About Me
             </span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-sky-500 to-indigo-600 group-hover:w-full transition-all duration-500"></span>
           </h2>
-          <p className="text-lg text-gray-800 dark:text-gray-300 leading-relaxed space-y-4">
+          <p className="text-lg text-gray-800 dark:text-gray-300 leading-relaxed space-y-4 animate-fade-in">
             {summary}
           </p>
         </section>
@@ -165,9 +660,10 @@ export default function Home() {
           data-aos="fade-up"
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-10 text-center sm:text-left relative group font-heading">
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-700 to-black dark:from-gray-300 dark:to-white">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-700 to-black dark:from-gray-300 dark:to-white inline-block hover:scale-105 transition-transform duration-300">
               Experience
             </span>
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-sky-500 to-indigo-600 group-hover:w-full transition-all duration-500"></span>
           </h2>
           <div className="space-y-12">
             {experiences.map((exp, index) => (
@@ -178,7 +674,33 @@ export default function Home() {
                 data-aos-delay={`${index * 100}`}
               >
                 <h3 className="text-xl sm:text-2xl font-semibold mb-1 text-black dark:text-white font-heading">
-                  {exp.title} at {exp.company}
+                  {exp.title} at{' '}
+                  {exp.companyUrl ? (
+                    <a
+                      href={exp.companyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300 hover:underline transition-colors duration-200 inline-flex items-center gap-1.5"
+                    >
+                      {exp.company}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-4 w-4 inline-block"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                      </svg>
+                    </a>
+                  ) : (
+                    <span>{exp.company}</span>
+                  )}
                 </h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
                   {exp.period} {exp.location && `| ${exp.location}`}
